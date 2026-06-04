@@ -7,5 +7,7 @@ MONGO_COLLECTION_NAME = "waferfault"
 TARGET_COLUMN = " "
 MONGO_DB_URL = "mongodb+srv://thapadheeraj857_db_user:Dheeraj@123@cluster001.15qn1hx.mongodb.net/?appName=Cluster001"
 
-MONGO_FILE_NAME = " "
+MONGO_FILE_NAME = "quality"
 MODEL_FILE_EXTENSION = " "
+
+artifact_folder = 'artifacts'
