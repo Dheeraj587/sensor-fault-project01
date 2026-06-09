@@ -18,7 +18,7 @@ class PredictionPipelineConfig:
     prediction_output_dirname: str = 'predictions'
     prediction_file_name: str = 'prediction_file.csv'
     model_file_path: str = os.path.join(artifact_folder,'model.pkl')
-    preprocessor_path:str = os.join(artifact_folder,'preprocessor.pkl')
+    preprocessor_path:str = os.path.join(artifact_folder,'preprocessor.pkl')
     prediction_file_path : str = os.path.join(prediction_output_dirname,prediction_file_name)
 
 
@@ -34,7 +34,7 @@ class PredictionPipeline:
             pred_file_input_dir = 'prediction_artifacts'
             os.makedirs(pred_file_input_dir,exist_ok=True)
 
-            input_csv_file = self.request.files['files']
+            input_csv_file = self.request.files['file']
             pred_file_path = os.path.join(pred_file_input_dir,input_csv_file.filename)
 
             input_csv_file.save(pred_file_path)

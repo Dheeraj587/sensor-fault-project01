@@ -9,6 +9,8 @@ from src.exception import CustomException
 from src.logger import logging
 from src.utils.main_utils import MainUtils
 from dataclasses import dataclass
+import certifi
+ca = certifi.where()
 
 @dataclass
 class DataingestionConfig:
@@ -27,7 +29,11 @@ class DataIngestion:
         database_name
     ):
         try:
-            mongo_client = MongoClient(MONGO_DB_URL)
+            mongo_client = MongoClient(
+    MONGO_DB_URL,
+    tls=True,
+    tlsCAFile=ca
+)
 
             collection = mongo_client[
                 database_name

@@ -6,7 +6,7 @@ from src.components.model_trainer import ModelTrainer
 from src.exception import CustomException
 
 
-class Trainingpipeline:
+class TrainingPipeline:
 
     def start_data_ingestion(self):
         try:
@@ -22,7 +22,7 @@ class Trainingpipeline:
     def start_data_tranformation(self,feature_store_file_path):
         try:
             data_transformation = DataTransformation(feature_store_file_path=feature_store_file_path)
-            train_arr,test_arr,preprocessor_path = data_transformation.inittiate_data_transformation
+            train_arr,test_arr,preprocessor_path = data_transformation.initiate_data_transformation()
             return train_arr,test_arr,preprocessor_path
         
         except Exception as e:
